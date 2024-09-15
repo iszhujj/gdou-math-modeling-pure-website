@@ -1,0 +1,117 @@
+.suggestion,.suggestion-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    position: relative;
+
+    p{
+        margin-right: 10px;
+    }
+    .mail{
+        width: 50px;
+        transition: all 300ms ease 100ms;
+    }
+    .hr{
+        position: absolute;
+        bottom: 2px;
+        width: 0;
+        opacity: 0;
+        transition: width 300ms ease 200ms,opacity 200ms ease 0ms;
+        left: 0;
+    }
+}
+.suggestion-box:hover{
+    cursor: url(../../../../../public/static/cur-file/hand.cur), auto;
+    *{
+        cursor: url(../../../../../public/static/cur-file/hand.cur), auto;
+    }
+    
+    .mail{
+        color: rgb(58, 157, 249);
+        font-size: 1.3rem;
+        font-weight: 800;
+        box-shadow: 0 1px 10px 1px #eee;
+    }
+    .hr{
+        width: 100%;
+        opacity: 1;
+    }
+}
+.relation{
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+.verify{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    .large-verify-img{
+        width: 40vw;
+        height: 40vw;
+        
+    }
+    .verify-img{
+        width: 100px;
+        height: 100px;
+        border-radius: 16px;
+        margin-right: 15px;
+    }
+    .verify-question-select{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .ant-radio-button-wrapper:hover{
+            cursor: url(../../../../../public/static/cur-file/hand.cur), auto;
+            *{
+                cursor: url(../../../../../public/static/cur-file/hand.cur), auto;
+            }
+        }
+
+        .ver-label{
+            margin-bottom: 5px;
+            strong{
+                margin: 0 8px;
+            }
+        }
+    }
+}
+.err-tip{
+    width: 1005;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: brown;
+}
+.upload{
+    .ant-upload-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1600px) {
+    .suggestion{
+        width: 90vw !important;
+        position: relative;
+        transform: translate(calc(2.5vw + 225px), 0);
+    }
+}
+
+@media (max-width:500px) {
+    .verify{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

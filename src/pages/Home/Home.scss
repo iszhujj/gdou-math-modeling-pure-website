@@ -1,0 +1,121 @@
+.container{
+    width: 100vw;
+    // height: 1050vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+
+    .main{
+        // position: ;
+        // position: -webkit-sticky;
+        // position: sticky;                    /* 本来是想用粘滞定位的，但是联想浏览器中不生效 */
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        .page{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .page:nth-child(2){
+            border-radius: 0 0 20% 20%;
+            background-color: #fefefe;
+        }
+        .page:nth-child(3){
+            background-image: linear-gradient(
+                to right bottom,
+             #f0a7d144,
+             #e2a6d944, #d1a6e044, #bda6e544,
+             #a7a7e844, #94aff144, #80b7f644,
+             #69bff844, #52cffe44, #41dfff44,
+             #46eefa44, #5ffbf144);
+        }
+        .page:nth-child(4){
+            overflow: hidden;
+            
+            &::before{
+                transition: all 500ms ease 200ms;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%, 50%);
+                z-index: -1;
+                content: '';
+                width: 0px;
+                height: 0px;
+                background-image: 
+                linear-gradient(to right top,
+                 #d3e3fb66, #beeafb66, #b4f0ed66, #c1f2d466, #e0eebc66);
+                 border-radius: 50%;
+            }
+        }
+        .page:nth-child(4):hover{
+            &::before{
+                width: 240vw;
+                height: 240vw;
+            }
+        }
+        .page:nth-child(n + 6){
+            transform: translate(0, 100%);
+        }
+        .page:nth-child(6){
+            box-shadow: 5px 5px 10px 5px #eee;
+
+            // &::before,&::after{
+            //     position: absolute;
+            //     content: "";
+            //     width: 45vh;
+            //     height: 45vh;
+            //     z-index: -2;
+            //     border-radius: 50%;
+            // }
+            // &::before{
+            //     left: 0;
+            //     top: 0;
+            //     background-image: linear-gradient(to bottom, #9dc2f9, #becffa, #d8defc, #eeeefd, #ffffff);
+            // }
+            // &::after{
+            //     right: 0;
+            //     bottom: 0;
+            //     background-image: linear-gradient(to top, #e9b4f4, #e9c9fb, #eddcff, #f4eeff, #ffffff);
+            // }
+        }
+        .page{
+            box-shadow: 0 0 5px 2px #bbb;
+        }
+        .page-end{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            padding-top: 220px;
+        }
+    }
+}
+
+// 预设的高度 3600，调整时要和home.jsx中的最后一项一起调整
+@media (min-width:1600px) {
+    .container{
+        height: calc(3600px + 660vh);           // 3600px 一定比page[6].offsetHeight要大
+    }
+}
+@media (min-width:1000px) and (max-width:1599px) {
+    .container{
+        height: calc(3600px + 660vh);
+    }
+}

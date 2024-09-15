@@ -1,0 +1,112 @@
+.if-you,.then{
+    font-family: 'font-eng-4';
+    margin-bottom: 0;
+    margin-top: 20px;
+    
+
+    h2,h1{
+        width: 100vw;
+        text-align: center;
+        font-family: 'font-eng-4';
+        background: linear-gradient(-45deg, #be02be, #66CCFF);
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -o-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+    }
+    h2{
+        margin: 14px 0;
+    }
+
+    // 显示状态
+    .if-text{
+        animation: leftAndSmallToNormal 300ms ease both;
+    }
+    .then-text{
+        animation: smallToNormal 300ms ease 560ms both;
+    }
+}
+
+// 初始状态
+.if-you{
+    .text{
+        opacity: 0;
+    }
+}
+.then{
+    .text{
+        opacity: 0;
+    }
+}
+
+.detail-text{
+    width: 90vw;
+    position: relative;
+    height: 240px;
+
+    span{
+        max-width: 200px;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        word-break: keep-all;
+        opacity: 0;
+        transition: all 400ms linear 200ms;
+    }
+    .rand-font{
+        opacity: 1;
+        // animation: smallToNormal 300ms ease 560ms forwards;
+    }
+    .text-0{
+        transform: translate(-130%,-80px) rotate(-30deg);
+    }
+    .text-1{
+        transform: translate(60%,-36px) rotate(20deg);
+    }
+    .text-2{
+        transform: translate(-50%,-65px) rotate(-10deg);
+        font-size: 1.2rem;
+    }
+    .text-3{
+        transform: translate(-50%, -50%);
+        font-size: 1.2rem;
+    }
+    .text-4{
+        transform: translate(-5%,50px) rotate(-8deg);
+        font-size: 0.95rem;
+    }
+    .text-5{
+        transform: translate(-70%,75px) rotate(10deg);
+    }
+    .text-6{
+        transform: translate(-90%,20px) rotate(5deg);
+        font-size: 0.88rem;
+    }
+}
+
+@keyframes smallToNormal {  // 自小变大
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes leftAndSmallToNormal {
+    0%{
+        transform: translate(-200%,0) scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+    }
+}

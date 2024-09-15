@@ -1,0 +1,58 @@
+.honorwall-outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    width: 86vw;
+    max-width: 1300px;
+    height: calc(100vh - 150px);
+    padding: 10px;
+    box-shadow: 0 0 10px 5px #ccc;
+
+    .for-shadow{
+        padding: 10px 0;
+        box-sizing: border-box;
+        width: 100%;
+        // height: calc(100vh - 150px);
+        // overflow: hidden;
+    }
+
+    .honor-container{
+        // transition: transform 100ms linear 0s;
+        padding: 10px;
+        width: 100%;
+        // min-height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-rows: 1fr;
+        grid-gap: 1em;
+        box-sizing: border-box;
+        grid-auto-flow: dense;
+        // box-shadow: 4px 4px 10px 5px #bbb;
+        background-color: #fff;
+    
+        img{
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 1px 1px 10px 1px #ccc;
+        }
+        .large-img{
+            grid-column: span 2;
+        }
+    }
+    .honor-container:nth-child(1){
+        animation: up_move 25000ms linear 0s infinite;
+    }
+    .honor-container:nth-child(2){
+        animation: up_move 25000ms linear 0ms infinite;
+    }
+}
+
+@keyframes up_move {
+    from{
+        transform: translate(0, 0);
+    }to{
+        transform: translate(0, -100%);
+    }
+}

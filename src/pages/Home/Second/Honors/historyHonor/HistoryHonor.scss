@@ -1,0 +1,162 @@
+.history-honor{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+
+    .content-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        height: 630px;
+        width: 90%;
+        min-width: 1000px;
+        padding: 0;
+        margin: 0;
+
+        p{
+            // text-align: center;
+            line-height: 35px;
+            font-size: 1rem;
+            margin: 10px 0;
+            transition: all 300ms linear 0s, font-size 300ms linear 100ms;
+
+            .text:hover{
+                cursor: url(../../../../../../public/static/cur-file/hand.cur),auto;
+            }
+        }
+        .act-p{
+            font-size: 1rem;
+            line-height: 40px;
+            margin: 10px 0;
+        }
+    }
+    .transition-div{
+        transition: all 400ms linear 0s;
+    }
+    .mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background-image: linear-gradient(
+            to bottom,
+            #ffffffff 4%,
+            #ffffff00 25%,
+            #ffffff00 75%,
+            #ffffffff 94%
+        );
+    }
+}
+
+@media (max-width: 999px){
+    .history-honor{
+        height: 65vh;
+        overflow: hidden;
+    }
+    .content-box{
+        height: 100vw !important;
+        width: 80vh !important;
+        min-width: 560px !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .ant-timeline-item{
+            transform: translate(-200px);
+
+            .ant-timeline-item-content{
+                height: 75px !important;
+                width: 500px !important;
+    
+                .ver-p{
+                    writing-mode: vertical-rl;
+                    transform-origin: top;
+                    transform: rotate(-90deg) translate(5px, -25px);
+                    height: 45vh;
+                    width: 75px;
+                    text-align: start;
+                }
+                
+            }
+            .time{
+                transform: rotate(-90deg) translate(50px, -50%);
+                transform-origin: right;
+            }
+        }
+        .ant-timeline-item:nth-child(2n){
+            .time{
+                transform: rotate(-90deg) translate(50px, -180%);
+            }
+        }
+    }
+    .mask{
+        background-image: linear-gradient(
+            to right,
+            #ffffffff 0%,
+            #ffffff00 20%,
+            #ffffff00 80%,
+            #ffffffff 100%
+        ) !important;
+    }
+}
+@media (min-width: 650px) and (max-width:999px) {
+    .content-box{
+        transform: translateX(-15px);
+    }
+}
+@media (max-width:520px) {
+    // .content-box{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     transform-origin: 50% 50%;
+    //     // transform: translate();
+    // }
+}
+@media (min-width:740px) and (max-width:1000px) {
+    // .content-box{
+    //     bottom: 40px;
+    //     transform-origin: 50% 80% !important;
+    // }
+}
+
+@media (min-width:1000px) {
+    .content-box{
+        .ant-timeline-item-content{
+            .honor-title{
+                .text{
+                    transition: all 300ms linear 0s;
+                }
+                .text:hover{
+                    font-size: 1.1rem;
+                    text-shadow: 10px 10px 20px #ddd;
+                }
+            }
+        }
+    }
+    .history-honor::before,.history-honor::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        z-index: 1;
+    }
+    .history-honor::before{
+        top: 0;
+        background-image: linear-gradient(to top,#ffffff00,#fff);
+    }
+    .history-honor::after{
+        bottom: 0;
+        background-image: linear-gradient(to bottom,#ffffff00,#fff);
+    }
+    
+}

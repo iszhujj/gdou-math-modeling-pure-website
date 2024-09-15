@@ -1,0 +1,133 @@
+.student-box{
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    transition: height 1000ms linear 0s;
+    justify-content: center;
+
+    .pic-frame{
+        width: 86vw;
+        height: 56vw;
+        background-image: linear-gradient(to bottom, #cfe7f8, transparent);
+        position: relative;
+        border-radius: 5px;
+
+        .img-item{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 84%;
+            border-radius: 4px;
+            box-shadow: 0 0 2px 0.5px rgba(241, 241, 241, 0.061);
+            transform-origin: bottom center;
+            transform: translate(-50%, -50%);
+            transition: transform 400ms linear 0s,
+                        opacity 400ms linear 0s,
+                        z-index 400ms linear 0s;
+        }
+        .usimg-0{
+            transform-origin: right top;
+        }
+        .img-item:nth-child(1){
+            z-index: 100;
+        }
+        @for $i from 0 through 3 {
+            .usimg-#{$i}{
+                transform: translate(-50%,#{-50% + $i * 35}) scale(#{1 - $i * 0.08});
+                z-index: #{100 - $i};
+                opacity: #{1 - $i * 0.30};
+                // transform: translate(-50%, -50%) rotate(#{-$i * 2.5}deg) scale(#{1 - $i * 0.03});
+            }
+        }
+
+        .ant-steps-item-container{
+            cursor: url(./ice.cur), auto;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .student-box{
+        margin: 50px 0;
+
+        h3{
+            margin: 40px 0;
+        }
+    }
+    .pic-frame{
+        background-color: transparent;
+        width: 80vw !important;
+        height: 60vw !important;
+        max-height: 700px;
+        min-width: 680px;
+        max-width: 900px;
+        border-radius: 10px;
+        overflow: hidden;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+
+        .per-img{
+            width: 80vw;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+        .step-line{
+            width: 80vw;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+
+            .step-antd{
+                width: 700px;
+                margin: 40px;
+
+                .ant-steps-item-tail::after{
+                    background-color: #0505050f !important;
+                }
+                .ant-steps-item{
+                    .ant-steps-item-container{
+                        opacity: 0;
+                    }
+                }
+                .ant-steps-item:hover{
+                    cursor: url(../../../../../../public/static/cur-file/hand.cur), auto;
+
+                    .ant-steps-item-container, *{
+                        cursor: url(../../../../../../public/static/cur-file/hand.cur), auto;
+                    }
+                }
+                .up-show-0{
+                    animation: upToNormal 300ms ease 0ms forwards !important;
+                }
+                .up-show-1{
+                    animation: upToNormal 300ms ease 150ms forwards !important;
+                }
+                .up-show-2{
+                    animation: upToNormal 300ms ease 300ms forwards !important;
+                }
+                .up-show-3{
+                    animation: upToNormal 300ms ease 450ms forwards !important;
+                }
+            }
+        }
+    }
+}
+
+@keyframes upToNormal{         // 火箭依次上升
+    from{
+        transform: translate(0, 120%);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

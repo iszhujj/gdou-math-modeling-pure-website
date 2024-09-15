@@ -1,0 +1,197 @@
+.first-box{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    transition: transform 600ms ease-in 50ms;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    .team-badge-container{
+        width: 100vw;
+        max-width: 600px;
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        z-index: 1;
+        display: flex;
+        padding-top: 18vh;
+        box-sizing: border-box;
+        align-items: center;
+        flex-direction: column;
+
+        .team-badge{
+            width: 55vw;
+            height: 55vw;
+            max-width: 330px;
+            max-height: 330px;
+            opacity: 0;
+        }
+        .team-badge-show{
+            animation: BadgeRotate 500ms ease 0s 2 forwards,
+                addOpacity 1000ms ease-out 0s forwards;
+        }
+        .word-box{
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #303133;
+            opacity: 0;
+            transform: translate(0, 100%);
+            transition: opacity 600ms linear ,
+                        transform 600ms linear ;
+
+            .word{
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 30px;
+                color: #7792ff;
+            }
+            .word:nth-child(1){
+                display: none;
+            }
+            .word:nth-child(2){
+                font-size: 1.2rem;
+                font-weight: 600;
+                font-family: 'font-eng-1';
+
+                p{
+                    text-align: center;
+                    margin: 7px 0;
+                    font-size: 1.8rem;
+                    font-family: inherit;
+                }
+            }
+        }
+    }
+    .bg-img-box{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        #canvas{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 1;
+            transition: opacity 10ms linear 1590ms;
+            width: 100vw;
+            max-width: 600px;
+            height: 100vh;
+        }
+        .bg-img{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            max-width: 600px;
+            transition: opacity 1600ms linear 0s;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width:1000px) {
+    .first-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 0 calc((100vw - 1000px) / 2) 0 calc((100vw - 1000px) / 2);
+        // background-color: #dac0ff5e;
+        background-image: linear-gradient(to bottom right,#7891de,white);
+        box-shadow: 0 2px 8px 4px #eee;
+
+        .team-badge-container{
+            width: calc(500px - 25px);
+            position: relative;
+            transform: translate(0);
+            left: 0;
+            top: 0;
+            padding: 0;
+            height: calc(100vh - 5vh);
+            margin-right: 50px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // background-color: #dac0ff5e;
+        }
+
+        .bg-img-box{
+            position: relative;
+            width: calc(500px - 25px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            // overflow: hidden;
+            // background-color: #dac0ff5e;
+    
+            #canvas{
+                position: absolute;
+                left: 50%;
+                top: auto;
+                bottom: 0;
+                transform: translate(-50%,0);
+                opacity: 1;
+                transition: opacity 10ms linear 1590ms;
+                width: calc(427px * 1.3);
+                height: calc(640px * 1.3);
+
+            }
+            .bg-img{
+                position: absolute;
+                left: 50%;
+                top: auto;
+                bottom: 0;
+                transform: translate(-50%,0);
+                width: 500px;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 1600ms linear 0s;
+                object-fit: cover;
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes BadgeRotate {
+    0%{
+        transform: rotateY(0deg);
+    }
+    25%{
+        transform: rotateY(90deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    75%{
+        transform: rotateY(270deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+@keyframes addOpacity {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

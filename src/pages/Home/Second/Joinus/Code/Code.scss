@@ -1,0 +1,100 @@
+.code-container{
+    box-shadow: 0 0 10px 1px #ccc;
+    width: 90%;
+    max-width: 470px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    background-color: #ffffffaa;
+
+    .file-type-list{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .item{
+            height: 35px;
+            padding-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            box-sizing: border-box;
+            overflow: hidden;
+            opacity: 0.4;
+            font-weight: 400;
+            transition: opacity 300ms linear;
+
+            .icon{
+                height: 12px;
+            }
+            .title{
+                flex-shrink: 1;
+                margin-left: 10px;
+                font-size: 12px;
+            }
+        }
+        .item:hover{
+            cursor: url(../../../../../../public/static/cur-file/hand.cur),auto;
+
+            *{
+                cursor: url(../../../../../../public/static/cur-file/hand.cur),auto;
+            }
+        }
+        .item-actived{
+            background-color: #fff;
+            opacity: 1;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+    .my-codemirror-wrapper{
+
+        border-top: 0;
+        // width: 100%;
+        box-sizing: border-box;
+
+        // 覆盖原生
+        .CodeMirror{
+            height: auto;
+            background-color: transparent;
+        }
+        .CodeMirror-linenumber{
+            color: #7e7d7d;
+        }
+        .cm-variable{
+            color: #76aa42;
+        }
+        .CodeMirror-line,.CodeMirror-line > pre{
+            font-size: 0.9rem;
+            font-family: 'font-eng-3';
+        }
+        .cm-keyword,.cm-variable,.cm-variable,
+        .cm-property,.cm-string,.cm-variable-2,
+        .cm-def,.cm-comment,.cm-type{
+            font-family: 'font-eng-3';
+        }
+        span[role='presentation']{
+            font-family: 'font-eng-3';
+            font-size: 0.9rem;
+        }
+        div[class^='cm'],div[class^='cm'] > *{
+            font-family: 'font-eng-3';
+            font-size: 0.9rem;
+        }
+    }
+    .my-codemirror-wrapper > *{
+        font-family: 'font-eng-3' !important;
+    }
+}
+
+@media (min-width: 850px) {
+    .code-container{
+        width: 650px;
+        max-width: 650px;
+    }
+    .my-codemirror-wrapper{
+        width: 650px;
+        height: auto;
+    }
+}

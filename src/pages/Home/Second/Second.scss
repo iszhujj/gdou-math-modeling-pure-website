@@ -1,0 +1,48 @@
+.second-box{
+    width: 100vw;
+    // height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    margin-top: 100vh;
+    // overflow: hidden;
+
+    .bg-pattern-box{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100vw;
+        height: calc(100%);
+        padding: 0;
+        // overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 500ms linear 0s;
+
+        img{
+            width: 75vw;
+            height: 75vw;
+            opacity: 0.3;
+        }
+    }
+    @media (min-width: 620px) {
+        .bg-pattern-box{
+            display: none;
+            opacity: 0;
+        }
+    }
+}
+.second-box{
+    *::-webkit-scrollbar{
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}

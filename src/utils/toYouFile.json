@@ -1,0 +1,23 @@
+{
+    "remark":{
+        "title":"本项为备注内容",
+        "for-typePng":"第一项是相应的图片名称，图片存储到static/icons目录下；第二项是该类型语言文件的后缀名；第三项表示展示的顺序；",
+        "for-typeCode":"每一项对应的是每一种语言类型的内容，与typePng中的顺序一致",
+        "for-show":"每一种模式所表示的语言，顺序即typePng或typeCode的顺序，关于langs.xx 的内容可查看：https://github.com/codemirror/codemirror5/tree/master/mode"
+    },
+    "data":{
+        "typePng":[
+            ["MySQL.png", "sql", 0],
+            ["Python.png", "py", 1],
+            ["Java.png", "java", 2],
+            ["JavaScript.png", "js", 3]
+        ],
+        "typeCode":[
+            " \nINSERT INTO gdou_Math_Modeling\nSELECT * \nFROM freshmenOfGDOU\nWHERE ability >= @preeminent;\n ",
+            " \ntry:\n\tif you.selectTeam != \"GDOU-Math-Modeling\":\n\t\traise RegretForSelectedException\nexcept RegretForSelectedException as opportunity:\n\topportunity.selectAgain()\n ",
+            " \npublic interface ProsperousAndStrong {\n\tpublic void prosperousAndStrong();\n}\n\nclass GDOU_Math_Modeling implements ProsperousAndStrong{\n\t......\n\tpublic void prosperousAndStrong(){\n\t\t// wait you to finish with us.\n\t}\n}\n ",
+            " \nus.addEventListener('you coming', you => {\n\tus.pauseAllThingAndPrepare().then( us => {\n\t\tus.toPickUp(you);\n\t});\n});\n "
+        ],
+        "show":"<CodeMirror value={this.state.showCode} className='my-codemirror-wrapper' theme={githubLight} autoFocus={false} editable={false} readOnly={true} extensions={ this.codeMode === 0 ? [langs.sql()] :this.codeMode === 1 ? [langs.python()] :this.codeMode === 2 ? [langs.java()] : [langs.javascript()]}/>"
+    }
+}

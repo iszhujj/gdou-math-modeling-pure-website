@@ -1,0 +1,50 @@
+#App{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+// @media (min-width: 800px) {
+//     #App{
+//         display: flex;
+//         flex-direction: column;
+//         // justify-content: center;
+//         // align-items: center;
+//     }
+// }
+
+.ant-btn:hover{
+    cursor: url(../public/static/cur-file/hand.cur),auto;
+    *{
+        cursor: url(../public/static/cur-file/hand.cur),auto;
+    }
+}
+.ant-btn:disabled:hover{
+    cursor:not-allowed !important;
+}
+button[aria-label="Close"],
+.ant-notification-notice-close,
+.ant-upload-disabled,
+.ant-select-dropdown{
+    cursor: url(../public/static/cur-file/hand.cur),auto;
+    *{
+        cursor: url(../public/static/cur-file/hand.cur),auto;
+    }
+}
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #95adfd;
+    border-radius: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: #fff;
+}

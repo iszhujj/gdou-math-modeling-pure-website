@@ -1,0 +1,152 @@
+.joinus-box{
+    width: 100vw;
+    // height: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-family: 'font-eng-2';
+    position: relative;
+
+    .condition{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 4;
+
+        .collection{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p{
+                font-size: 1.2rem;
+                margin: 10px 0;
+            }
+            .point-to{
+                width: 100px;
+                transform: rotate(165deg);
+            }
+            .to-collect{
+                position: relative;
+                width: 65vw;
+                max-width: 420px;
+                padding: 20px 0;
+                box-sizing: border-box;
+                border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                }
+            }
+            .to-collect::after{
+                animation: clippath 3s linear -1.5s infinite;
+            }
+            .to-collect::before{
+                animation: clippath 3s linear infinite;
+            }
+            .to-collect::before,.to-collect::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 2px solid rgba(112,149,249,.333);
+                transition: all .5s;
+                border-radius: 10px;
+            }
+            .to-collect:hover{
+                cursor: pointer;
+            }
+
+            .regist-img{
+                width: 65vw;
+                max-width: 500px;
+                box-shadow: 2px 2px 10px 1px #eee;
+                // animation: neartoremote 3000ms ease 100ms forwards;
+            }
+
+            .upload-work{
+                padding: 0 45px;
+                position: relative;
+                margin: 40px 0;
+                
+                .more:hover{
+                    cursor: url(../../../../../public/static/cur-file/hand.cur),auto;
+
+                    *{
+                        cursor: url(../../../../../public/static/cur-file/hand.cur),auto;
+                    }
+                }
+            }
+            
+        }
+    }
+    .ant-input-data-count{
+        font-size: 12px !important;
+    }
+    .circle-box{
+        height: 100%;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+
+        .circle{
+            position: absolute;
+            border-radius: 90%;
+            max-width: 600px;
+            max-height: 600px;
+        }
+    }
+    @media (max-width:619px) {
+        .circle-box{
+            display: none;
+            opacity: 0;
+        }
+    }
+}
+.modal-btn{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translate(-50px, 0);
+
+    .ant-btn{
+        box-sizing: border-box;
+        margin: 15px 20px;
+        padding: 5px 25px;
+    }
+}
+
+@keyframes clippath {
+    0%, 100%{
+        -webkit-clip-path: inset(0 0 90% 0);
+        clip-path: inset(0 0 90% 0);
+    }
+    25%{
+        -webkit-clip-path: inset(0 90% 0 0);
+        clip-path: inset(0 90% 0 0);
+    }
+    50%{
+        -webkit-clip-path: inset(90% 0 0 0);
+        clip-path: inset(90% 0 0 0);
+    }
+    75%{
+        -webkit-clip-path: inset(0 0 0 90%);
+        clip-path: inset(0 0 0 90%);
+    }
+}

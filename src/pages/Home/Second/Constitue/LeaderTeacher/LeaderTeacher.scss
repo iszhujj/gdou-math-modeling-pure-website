@@ -1,0 +1,328 @@
+.main-area{
+    // width: 100vw;
+    // height: 100vh;
+    position: relative;
+    // top: 0;
+    // left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 300ms linear 0s;
+
+    .title-text{
+        margin: 20px 0 10px 0;
+        text-indent: 2em;
+        width: 90vw;
+        text-align: center;
+    }
+    .three-teacher-container{
+        position: relative;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .teacher-box{
+        margin: 20px 0;
+        padding: 0;
+        width: 80vw;
+
+        .tea-img-box{
+            position: relative;
+            width: 150px;
+            height: 100px;
+            
+            .tea-img-show{
+                border: 10px solid #fff;
+                width: 65px;
+                height: 65px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: absolute;
+
+                img{
+                    width: 50px;
+                    box-sizing: border-box;
+                    border-radius: 0 0 20px 20px;
+                }
+                .ls{
+                    transform: translate(0,-5px) scale(1.2);
+                }
+                .lz{
+                    transform: translate(0,-5px) scale(1.13);
+                }
+                .dm{
+                    transform: translate(0,-5px) scale(1.18);
+                }
+            }
+            .tea-img-show::after{
+                content: "";
+                position: absolute;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                border: 12px solid rgb(255, 255, 255);
+                border-top: transparent;
+                border-left: transparent;
+                border-right: transparent;
+                background: transparent;
+            }
+        }
+        p{
+            width: 100%;
+            margin: 0;
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-all;
+            text-align: start;
+            text-indent: 2rem;
+            font-size: 0.85rem;
+            box-sizing: border-box;
+            border-radius: 0 12px 6px 0;
+            padding: 5px 10px;
+        }
+    }
+
+    .teacher-box:nth-child(1), .teacher-box:nth-child(3){
+        // transform: translate(-200%,0);
+
+        .tea-img-box{
+            float: right;
+            shape-outside: circle(35.3% at 136px 11px) border-box;
+            // animation: shapeOutsideEle 400ms ease 1300ms forwards;
+
+            .tea-img-show{
+                transform: translate(35%,-35%);
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    .teacher-box:nth-child(2){
+        // transform: translate(200%, 0);
+        margin-left: auto;
+    
+        .tea-img-box{
+            float: left;
+            shape-outside: circle(35.3% at 16px 7px) border-box;
+
+            .tea-img-show{
+                transform: translate(-35%,-35%);
+                left: 0;
+                top: 0;
+            }
+        }
+        p{
+            border-radius: 12px 0 0 8px;
+        }
+    }
+}
+
+@media screen and (min-width:620px) and (max-width: 850px) {
+    .three-teacher-container{
+        position: relative !important;
+        width: 90% !important;
+        max-width: 1000px !important;
+
+        .teacher-box{
+            width: calc(100% - 20vw) !important;
+        }
+    }
+}
+
+@media (max-width: 849px) {
+    .teacher-box:nth-child(1), .teacher-box:nth-child(3){
+        transform: translate(-200%,0);
+    }
+    .teacher-box:nth-child(2){
+        transform: translate(200%,0);
+    }
+    .tea-box-left-into{
+        animation: fromLeftInto 450ms ease 0s forwards;
+    }
+    .tea-box-right-into{
+        animation: fromRightInto 450ms ease 100ms forwards;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 849px) {
+    .teacher-box{
+        p{
+            height: 400px !important;
+        }
+    }
+}
+
+@media (min-width: 850px) {
+    .three-teacher-container{
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center;
+        max-width: 900px;
+
+        .teacher-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 !important;
+            opacity: 0;
+
+            .tea-img-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+
+                .tea-img-show{
+                    position: relative !important;
+                    transform: translate(0, 40%) !important;
+                    width: 90px;
+                    height: 90px;
+                    z-index: 5;
+
+                    img{
+                        width: 76px;
+                        // height: 56px;
+                        border-radius: 30px;
+                    }
+                    .ls{
+                        transform: translate(0,-12px) scale(1.08);
+                    }
+                    .lz,.dm{
+                        transform: translate(0,-12px);
+                    }
+                }
+                .tea-img-show::after{
+                    content: "";
+                    position: absolute;
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    border: 10px solid white;
+                    border-top: transparent;
+                    border-left: transparent;
+                    border-right: transparent;
+                    background: transparent;
+                }
+            }
+            .tea-passage{
+                width: 90%;
+                height: 450px;
+                padding: 15px 25px;
+                padding-top: 55px;
+                border-radius: 12px !important;
+                overflow: hidden;
+                // position: relative;
+            }
+            .tea-passage:hover{
+                box-shadow: 0 0 10px 1px #efefef;
+            }
+        }
+        .down-1{
+            animation: upToDown 600ms ease forwards;
+        }
+        .down-2{
+            animation: upToDown 600ms ease 200ms forwards;
+        }
+        .down-3{
+            animation: upToDown 600ms ease 400ms forwards;
+        }
+    }
+}
+
+@keyframes fromLeftInto {
+    from{
+        transform: translate(-200px,0);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromRightInto {
+    from{
+        transform: translate(200px,0);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
+@keyframes shapeOutsideEle {
+    from{
+        width: 0px;
+        height: 0px;
+        // shape-outside: circle(35.3 at 0px 0px) border-box;
+    }
+    to{
+        width: 150px;
+        height: 100px;
+        // shape-outside: circle(35.3% at 136px 11px) border-box;
+    }
+}
+
+@keyframes upToDown {
+    from{
+        transform: translate(0, -100px);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
+@media (min-width:1000px) {
+    .tea-passage{
+        position: relative;
+        z-index: 1;
+    }
+    .tea-passage:hover{
+        box-shadow: 0 0 10px 1px #efefef;
+
+        &::before{
+            width: 700px;
+            height: 700px;
+        }
+        &::after{
+            width: 700px;
+            height: 700px;
+        }
+    }
+    .tea-passage::before{
+        position: absolute;
+        z-index: -2;
+        transition: all 500ms ease 0s;
+        content: '';
+        display: block;
+        left: -200px;
+        bottom: -200px;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(224, 224, 224);
+        border-radius: 50%;
+        // border: 2px solid pink;
+    }
+    .tea-passage::after{
+        position: absolute;
+        z-index: -1;
+        transition: all 500ms ease 50ms;
+        content: '';
+        display: block;
+        left: -200px;
+        bottom: -200px;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        // border: 2px solid pink;
+    }
+}

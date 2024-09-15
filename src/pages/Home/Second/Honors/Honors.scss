@@ -1,0 +1,94 @@
+.honors-box{
+    width: 100vw;
+    padding: 40px 0;
+    position: relative;
+    z-index: 1;
+
+    #outer-canvas{
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+    }
+    
+    .top-area{
+        width: 100vw;
+        height: calc(1.64 * 40vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .right-imgs{
+            position: relative;
+            width: 65vw;
+            
+            img{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(0%, -55%);
+                width: 50vw;
+                max-width: 300px;
+                border-radius: 6px;
+                transform-origin: right bottom;
+                border: 1px solid rgb(237, 237, 213);
+                transition: all 400ms linear 0s;
+            }
+            img:nth-child(1){
+                z-index: 6;
+            }
+            @for $i from 0 to 4{
+                .ver-img-#{$i}{
+                    z-index: #{5 - $i} !important;
+                    transform: translate(0, -55%) rotate(#{$i * (-4)}deg);
+                    opacity: #{1 - $i * 0.3};
+                }
+            }
+        }
+        .left-title{
+            writing-mode: vertical-rl;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+}
+.honors-box,.honors-box > *{
+    cursor: url(ScrapeArea/bbb.cur), auto !important;
+}
+@media (min-width: 850px) {
+    .honors-box{
+        height: 100vh;
+        padding: 0;
+    }
+    .top-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto !important;
+        padding: 30px 0;
+
+        .left-title{
+            writing-mode: horizontal-tb !important;
+        }
+        .right-imgs{
+            width: 100vw;
+            height: 100vh;
+            max-width: 1150px;
+            max-height: 750px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+@media (max-width:849px) {
+    .honors-box{
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+}
